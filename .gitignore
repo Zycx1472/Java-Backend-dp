@@ -1,0 +1,43 @@
+# --- 解决子模块隐患 ---
+# 忽略所有深层目录下的 .git 文件夹，防止它们被误识别为子模块
+**/.git/
+
+# --- Java / Maven (后端) ---
+target/
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+# 忽略 IntelliJ IDEA 的配置
+.idea/
+*.iml
+*.iws
+*.ipr
+# 忽略项目帮助文件
+HELP.md
+
+# --- Nginx & 前端运行时 ---
+# 忽略 Nginx 运行产生的日志和临时文件
+nginx-1.1.8.0/logs/
+nginx-1.1.8.0/temp/
+nginx-1.1.8.0/cache/
+nginx-1.1.8.0/scgi_temp/
+nginx-1.1.8.0/uwsgi_temp/
+nginx-1.1.8.0/fastcgi_temp/
+nginx-1.1.8.0/client_body_temp/
+
+# --- IDE & 编辑器 (通用) ---
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+.springBeans
+.sts4-cache
+
+# --- 系统与杂项 ---
+.DS_Store
+Thumbs.db
+*.log
+tmp/
