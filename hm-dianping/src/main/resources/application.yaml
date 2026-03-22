@@ -17,6 +17,30 @@ spring:
       connection-test-query: SELECT 1
       # 允许在启动时如果无法建立连接直接报错，而不是等到调用时才发现
       initialization-fail-timeout: 1
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /dianping
+    username: dianping
+    password: 12345
+    connection-timeout: 1s
+    template:
+      retry:
+        enabled: true
+        initial-interval: 1000ms
+        multiplier: 1
+        max-attempts: 3
+    listener:
+      simple:
+        prefetch: 1
+        acknowledge-mode: auto
+        retry:
+          enabled: true
+          initial-interval: 1000ms
+          multiplier: 1
+          max-attempts: 3
+          stateless: true
+    publisher-confirm-type: correlated
   redis:
     host: 127.0.0.1
     port: 6379

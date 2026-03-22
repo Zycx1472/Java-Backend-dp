@@ -21,3 +21,4 @@ end
 redis.call("incrby", KEYS[1], -1)
 --- 4.下单
 redis.call("sadd", KEYS[2], ARGV[1])
+return 0
